@@ -1,0 +1,151 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>open.commons</groupId>
+	<artifactId>open-commons-core-dependencies</artifactId>
+	<version>2.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Open Commons Core Project common dependencies</name>
+	<description>Open Commons Core Projects common dependencies Management.</description>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Park, Jun-Hong</name>
+			<email>parkjunhong77@gmail.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<url>https://github.com/parkjunhong/open-commons-core-dependencies</url>
+		<developerConnection>parkjunhong77@gmail.com</developerConnection>
+	</scm>
+
+	<properties>
+		<encoding>UTF-8</encoding>
+		<java.version>1.8</java.version>
+
+		<compile.encoding>UTF-8</compile.encoding>
+		<compile.source.version>1.8</compile.source.version>
+		<compile.target.version>1.8</compile.target.version>
+
+		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+		<maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+		<maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+
+		<!-- >>> begin: dependencies -->
+		<org.apache.logging.log4j-api.version>2.17.2</org.apache.logging.log4j-api.version>
+		<slf4j-api.version>1.7.36</slf4j-api.version>
+		<!-- <<< end: dependencies -->
+	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Release Repository</name>
+			<url>https://nexus3.ymtech.co.kr/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Snapshot Repository</name>
+			<url>https://nexus3.ymtech.co.kr/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<!-- ===== -->
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo1.maven.org/maven2/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>ymtech-maven-repo</id>
+			<name>YMTECH Maven Repository</name>
+			<url>https://nexus3.ymtech.co.kr/repository/maven-public/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<!-- >>> Maven Central -->
+		<pluginRepository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo1.maven.org/maven2</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencyManagement>
+		<dependencies></dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- >>> begin: compile -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+				</plugin>
+				<!-- <<< end: compile -->
+
+				<!-- >>> begin: source -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${maven-source-plugin.version}</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- <<< end: source -->
+				<!-- >>> begin: javadoc -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven-javadoc-plugin.version}</version>
+					<configuration>
+						<goal>deploy</goal>
+						<show>private</show>
+						<nohelp>true</nohelp>
+						<additionalOptions>
+							<additionalOption>-Xdoclint:none</additionalOption>
+						</additionalOptions>
+						<charset>${encoding}</charset>
+						<docencoding>${encoding}</docencoding>
+						<encoding>${encoding}</encoding>
+					</configuration>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- <<< end: javadoc -->
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
