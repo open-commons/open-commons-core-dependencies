@@ -66,7 +66,7 @@
 	<repositories>
 		<!-- ===== -->
 		<repository>
-			<id>central</id>
+			<id>maven-central</id>
 			<name>Central Repository</name>
 			<url>https://repo1.maven.org/maven2/</url>
 			<snapshots>
@@ -84,7 +84,7 @@
 	<pluginRepositories>
 		<!-- >>> Maven Central -->
 		<pluginRepository>
-			<id>central</id>
+			<id>maven-central</id>
 			<name>Central Repository</name>
 			<url>https://repo1.maven.org/maven2</url>
 		</pluginRepository>
@@ -208,6 +208,8 @@
 				<extensions>true</extensions>
 				<configuration>
 					<publishingServerId>maven-central</publishingServerId>
+					<autoPublish>true</autoPublish>
+					<waitUntil>published</waitUntil>
 				</configuration>
 			</plugin>
 			<!-- GPG signature -->
