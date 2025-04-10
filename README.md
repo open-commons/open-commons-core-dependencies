@@ -14,7 +14,7 @@ See [wiki](https://github.com/open-commons/open-commons-core-dependencies/wiki)
 **[Go to LATEST](https://central.sonatype.com/artifact/io.github.open-commons/open-commons-core-dependencies)**
 
 # 'snapshot' Repository
-**[Go to LATEST](https://nexus3.ymtech.co.kr/#browse/browse:maven-public:io%2Fgithub%2Fopen-commons%2Fopen-commons-core)**
+**[Go to LATEST](https://nexus3.ymtech.co.kr/#browse/browse:maven-public:io%2Fgithub%2Fopen-commons%2Fopen-commons-core-dependencies)**
 
 Add 'Repository'.
 
