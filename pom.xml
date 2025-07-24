@@ -51,8 +51,10 @@
 		<slf4j-api.version>1.7.36</slf4j-api.version>
 		<!-- <<< end: dependencies -->
 		
-		<!-- Validation -->
-		<jsr305.verson>3.0.2</jsr305.verson>
+		<!-- >>> begin: Validation -->
+		<jakarta-validation.version>2.0.2</jakarta-validation.version>
+		<code-findbugs-jsr305.version>3.0.2</code-findbugs-jsr305.version>
+    <!-- >>> end: Validation -->
 	</properties>
 
 	<distributionManagement>
@@ -144,16 +146,21 @@
 			<!-- end: OpenCSV -->
 			<!-- ************** -->
 			
-			
 			<!-- ************** -->
-			<!-- begin: Validation -->
-			<!-- https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
+			<!-- >>> begin: Validation -->
+      <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
+      <dependency>
+        <groupId>jakarta.validation</groupId>
+        <artifactId>jakarta.validation-api</artifactId>
+        <version>${jakarta-validation.version}</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>jsr305</artifactId>
-        <version>${jsr305.version}</version>
+        <version>${code-findbugs-jsr305.version}</version>
       </dependency>
-      <!-- end: Validation -->
+      <!-- <<< end: Validation -->
       <!-- ************** -->
 		</dependencies>
 	</dependencyManagement>
