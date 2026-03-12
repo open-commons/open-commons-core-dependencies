@@ -40,7 +40,6 @@
     <java.version>25</java.version>
 
     <!-- >>> begin: build -->
-    
     <compile.encoding>UTF-8</compile.encoding>
     <compile.source.version>25</compile.source.version>
     <compile.target.version>25</compile.target.version>
@@ -57,12 +56,13 @@
     
     <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
     <!-- maven-gpg-plugin.version>1.5</maven-gpg-plugin.version -->
-    <maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
+    <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
     
     <!-- <<< end : build -->
 
     <!-- >>> begin: dependencies -->
     <!-- com.lmax.disruptor-version>3.3.6</com.lmax.disruptor-version -->
+    <!-- log4j: 비동기 지원 -->
     <disruptor.version>4.0.0</disruptor.version>
     
     <!-- net.sf.opencsv-version>2.3</net.sf.opencsv-version -->
@@ -76,10 +76,8 @@
     
     <!-- jakarta-validation.version>2.0.2</jakarta-validation.version -->
     <jakarta-validation.version>3.1.0</jakarta-validation.version>
-    
     <jakarta-annotation.version>3.0.0</jakarta-annotation.version>
-    
-    <code-findbugs-jsr305.version>3.0.2</code-findbugs-jsr305.version>
+    <org.jspecify.version>1.0.0</org.jspecify.version>
     
     <open-commons-core.version>3.0.0-SNAPSHOT</open-commons-core.version>   
     <!-- <<< end: dependencies -->
@@ -182,11 +180,11 @@
         <artifactId>jakarta.validation-api</artifactId>
         <version>${jakarta-validation.version}</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
+      <!-- Source: https://mvnrepository.com/artifact/org.jspecify/jspecify -->
       <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>jsr305</artifactId>
-        <version>${code-findbugs-jsr305.version}</version>
+          <groupId>org.jspecify</groupId>
+          <artifactId>jspecify</artifactId>
+          <version>${org.jspecify.version}</version>
       </dependency>
       <!-- <<< end: Validation -->
       <!-- ************** -->
@@ -213,7 +211,6 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven-compiler-plugin.version}</version>
           <configuration>
-            <release>${maven.compiler.release}</release>
             <encoding>${encoding}</encoding>
             <source>${compile.source.version}</source>
             <target>${compile.target.version}</target>
