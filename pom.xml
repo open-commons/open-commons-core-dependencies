@@ -44,38 +44,26 @@
     <compile.source.version>25</compile.source.version>
     <compile.target.version>25</compile.target.version>
 
-    <!--    <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>-->
-    <!--    <maven-source-plugin.version>2.2.1</maven-source-plugin.version>-->
-    <!--    <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>-->
-    <!--    <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>-->
-
     <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
     <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
     <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
     <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
 
     <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
-    <!-- maven-gpg-plugin.version>1.5</maven-gpg-plugin.version -->
     <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
 
     <!-- <<< end : build -->
 
     <!-- >>> begin: dependencies -->
-    <!-- com.lmax.disruptor-version>3.3.6</com.lmax.disruptor-version -->
-    <!-- log4j: 비동기 지원 -->
-    <disruptor.version>4.0.0</disruptor.version>
-
-    <!-- net.sf.opencsv-version>2.3</net.sf.opencsv-version -->
     <opencsv.version>5.9</opencsv.version>
 
-    <!--
-    org.apache.logging.log4j-api.version>2.17.2</org.apache.logging.log4j-api.version -->
-    <org.apache.logging.log4j-api.version>2.24.3</org.apache.logging.log4j-api.version>
-
-    <!-- slf4j-api.version>1.7.36</slf4j-api.version -->
+    <!-- begin: logging , "Spring Boot 버전과 호환성 유지"" -->
+    <log4j2.version>2.25.3</log4j2.version>
     <slf4j-api.version>2.0.16</slf4j-api.version>
+    <!-- log4j: 비동기 지원 -->
+    <disruptor.version>4.0.0</disruptor.version>
+    <!-- end: logging -->
 
-    <!-- jakarta-validation.version>2.0.2</jakarta-validation.version -->
     <jakarta-validation.version>3.1.0</jakarta-validation.version>
     <jakarta-annotation.version>3.0.0</jakarta-annotation.version>
     <org.jspecify.version>1.0.0</org.jspecify.version>
@@ -138,26 +126,26 @@
       <dependency>
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-core</artifactId>
-        <version>${org.apache.logging.log4j-api.version}</version>
+        <version>${log4j2.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-api</artifactId>
-        <version>${org.apache.logging.log4j-api.version}</version>
+        <version>${log4j2.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-slf4j2-impl</artifactId>
-        <version>${org.apache.logging.log4j-api.version}</version>
+        <version>${log4j2.version}</version>
       </dependency>
 
       <!-- begin: slf4j -->
       <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${slf4j-api.version}</version>
-      </dependency>
+<!--      <dependency>-->
+<!--        <groupId>org.slf4j</groupId>-->
+<!--        <artifactId>slf4j-api</artifactId>-->
+<!--        <version>${slf4j-api.version}</version>-->
+<!--      </dependency>-->
       <!-- end: slf4j -->
       <!-- <<< end: logging -->
       <!-- ********************** -->
