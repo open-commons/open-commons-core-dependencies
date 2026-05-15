@@ -1,3 +1,19 @@
+[2026/05/15]
+- pom.xml
+  - '-parameters' 컴파일 옵션 추가.  
+    ```
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>${maven-compiler-plugin.version}</version>
+      <configuration>
+        ...
+        <parameters>true</parameters>
+        ...
+      </configuration>
+    </plugin>
+    ```
+
 [2026/03/12]
 - Dependencies
   + Delete
